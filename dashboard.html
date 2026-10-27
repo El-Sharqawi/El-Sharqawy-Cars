@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="لوحة إدارة السيارات في معرض الشرقاوي.">
+    <title>إدارة السيارات | الشرقاوي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="cars.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <a class="logo" href="index.html" aria-label="الشرقاوي - الصفحة الرئيسية">
+                <span class="logo-text"><span class="brand-ar">الشرقاوي</span><span class="brand-en">El Sharqawy</span></span>
+            </a>
+            <div class="header-right">
+                <div class="nav-actions">
+                    <a class="btn btn-outline" href="index.html">العودة للموقع</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container container">
+        <section class="dashboard-card">
+            <h1 class="dashboard-title" id="form-title">إضافة سيارة جديدة لمعرض الشرقاوي</h1>
+            <p class="hero-desc">أدخل بيانات السيارة ثم احفظها لتظهر في صفحة المعرض.</p>
+
+            <form id="add-car-form">
+                <div class="form-group">
+                    <label for="car-name">اسم السيارة</label>
+                    <input class="form-control" id="car-name" name="name" type="text" required maxlength="100" placeholder="ادخل اسم السيارة">
+                </div>
+
+                <div class="form-group">
+                    <label for="car-brand-select">الماركة</label>
+                    <select class="form-control" id="car-brand-select" name="brand" required>
+                        <option value="">اختر الماركة</option>
+                        <option value="مرسيدس-بنز">مرسيدس-بنز</option>
+                        <option value="بي إم دبليو">بي إم دبليو</option>
+                        <option value="تسلا">تسلا</option>
+                        <option value="فورد">فورد</option>
+                        <option value="بورش">بورش</option>
+                        <option value="أودي">أودي</option>
+                        <option value="NEW">+ إضافة ماركة جديدة...</option>
+                    </select>
+                    <input class="form-control is-hidden mt-8" id="car-brand-custom" type="text" maxlength="60" placeholder="اكتب اسم الماركة الجديدة" aria-label="اسم الماركة الجديدة">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="car-year">سنة الصنع</label>
+                        <input class="form-control" id="car-year" name="year" type="number" min="1900" max="2100" required placeholder="2024">
+                    </div>
+                    <div class="form-group">
+                        <label for="car-price">السعر بالجنيه المصري</label>
+                        <input class="form-control" id="car-price" name="price" type="text" inputmode="numeric" pattern="[0-9.]+" required placeholder="مثال: 850000">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="car-fuel">نوع الوقود</label>
+                        <select class="form-control" id="car-fuel" name="fuel" required>
+                            <option value="بنزين">بنزين</option>
+                            <option value="كهربائية">كهربائية</option>
+                            <option value="هجين">هجين</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="car-trans">ناقل الحركة</label>
+                        <select class="form-control" id="car-trans" name="trans" required>
+                            <option value="أوتوماتيك">أوتوماتيك</option>
+                            <option value="يدوي">يدوي</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="car-seats">عدد المقاعد</label>
+                    <input class="form-control" id="car-seats" name="seats" type="number" min="1" max="20" required value="5">
+                </div>
+
+                <div class="form-group">
+                    <p class="dashboard-subtitle">مصدر صورة السيارة</p>
+                    <div class="radio-source-group">
+                        <label class="radio-label"><input id="img-source-url" type="radio" name="image-source" value="url" checked> رابط صورة</label>
+                        <label class="radio-label"><input id="img-source-file" type="radio" name="image-source" value="file"> رفع صورة من الجهاز</label>
+                    </div>
+                    <input class="form-control" id="car-img-url" type="url" placeholder="https://example.com/car.jpg" required>
+                    <input class="form-control is-hidden mt-8" id="car-img-file" type="file" accept="image/*">
+                </div>
+
+                <div class="form-actions-group">
+                    <button class="btn btn-primary btn-submit-dashboard" id="submit-btn" type="submit">حفظ السيارة في المعرض</button>
+                    <button class="btn btn-outline is-hidden" id="cancel-edit-btn" type="button">إلغاء التعديل</button>
+                </div>
+            </form>
+
+            <hr class="dashboard-divider">
+
+            <section id="car-management-section">
+                <h2 class="dashboard-subtitle">إدارة السيارات الموجودة</h2>
+                <div class="form-group">
+                    <label for="dashboard-search-input">ابحث بالاسم أو الماركة أو السعر</label>
+                    <input class="form-control" id="dashboard-search-input" type="search" placeholder="اكتب اسم السيارة أو الماركة...">
+                </div>
+                <div class="search-results-list" id="dashboard-search-results" aria-live="polite"></div>
+            </section>
+        </section>
+    </main>
+
+    <div class="car-modal is-hidden" id="car-action-modal" role="dialog" aria-modal="true" aria-labelledby="modal-car-title">
+        <div class="car-modal-content">
+            <h2 id="modal-car-title">إدارة السيارة</h2>
+            <p class="modal-info-text" id="modal-car-info"></p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="modal-edit-btn" type="button">تعديل</button>
+                <button class="btn btn-danger" id="modal-delete-btn" type="button">حذف</button>
+                <button class="btn btn-outline" id="modal-close-btn" type="button">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-notification" id="toast-notification" role="status" aria-live="polite">تم الحفظ بنجاح</div>
+
+    <footer>
+        <div class="container"><p>© 2026 معرض الشرقاوي للسيارات</p></div>
+    </footer>
+</body>
+</html>

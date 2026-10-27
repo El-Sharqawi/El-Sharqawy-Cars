@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="معرض الشرقاوي للسيارات - اكتشف السيارات المتاحة وابحث عن السيارة المناسبة لك.">
+    <title>الشرقاوي | El Sharqawy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="cars.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <a class="logo" href="index.html" aria-label="الشرقاوي - الصفحة الرئيسية">
+                <span class="logo-text"><span class="brand-ar">الشرقاوي</span><span class="brand-en">El Sharqawy</span></span>
+            </a>
+
+            <input class="menu-checkbox" type="checkbox" id="menu-toggle" aria-label="فتح قائمة التنقل">
+            <nav aria-label="القائمة الرئيسية">
+                <ul class="nav-links">
+                    <li><a class="active" href="index.html">الرئيسية</a></li>
+                    <li><a href="#cars">السيارات</a></li>
+                    <li><a href="#why-us">لماذا نحن؟</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                    <li class="mobile-actions">
+                        <a class="btn btn-outline" href="#contact">تواصل معنا</a>
+                        <a class="btn btn-primary" href="dashboard.html">إدارة المعرض</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <div class="nav-actions">
+                    <a class="btn btn-outline" href="#contact">تواصل معنا</a>
+                    <a class="btn btn-primary" href="dashboard.html">إدارة المعرض</a>
+                </div>
+                <label class="hamburger-btn" for="menu-toggle" aria-label="فتح أو إغلاق القائمة">
+                    <span></span><span></span><span></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title">اختار عربيتك <span>مع الشرقاوي</span></h1>
+                    <p class="hero-desc">اكتشف مجموعة من السيارات المميزة، وقارن المواصفات واختر السيارة المناسبة لاحتياجاتك وميزانيتك.</p>
+                    <a class="btn btn-primary" href="#cars">تصفح السيارات</a>
+                </div>
+
+                <div class="search-card">
+                    <h3>ابحث عن سيارتك</h3>
+                    <form class="search-form" id="filter-form">
+                        <div class="form-group">
+                            <label for="filter-brand">الماركة</label>
+                            <select class="form-control" id="filter-brand" name="brand">
+                                <option value="ALL">اختر الماركة (الكل)</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="filter-fuel">نوع الوقود</label>
+                                <select class="form-control" id="filter-fuel" name="fuel">
+                                    <option value="ALL">كل الأنواع</option>
+                                    <option value="بنزين">بنزين</option>
+                                    <option value="كهربائية">كهربائية</option>
+                                    <option value="هجين">هجين</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="filter-year">سنة الصنع</label>
+                                <input class="form-control" id="filter-year" name="year" type="number" min="1900" max="2100" placeholder="مثال: 2024">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary search-submit-btn" type="submit">بحث عن السيارات</button>
+                        <button class="btn btn-outline" type="reset">إعادة ضبط البحث</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" aria-label="مميزات معرض الشرقاوي">
+            <div class="container features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">✓</div>
+                    <h4>سيارات مختارة</h4>
+                    <p>مجموعة متنوعة لتناسب احتياجاتك.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">◇</div>
+                    <h4>مواصفات واضحة</h4>
+                    <p>تفاصيل السيارة الأساسية في مكان واحد.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">ج.م</div>
+                    <h4>أسعار واضحة</h4>
+                    <p>اعرف السعر قبل التواصل معنا.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">☎</div>
+                    <h4>تواصل بسهولة</h4>
+                    <p>نساعدك في الوصول لاختيارك المناسب.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cars-section" id="cars">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>السيارات المتاحة</h2>
+                    <p class="hero-desc">تصفح أحدث السيارات المضافة إلى المعرض.</p>
+                </div>
+                <div class="cars-grid" id="cars-container" aria-live="polite">
+                    <p>جاري تحميل السيارات...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us" id="why-us">
+            <div class="container why-us-grid">
+                <div>
+                    <h2>لماذا تختار معرض الشرقاوي؟</h2>
+                    <p class="hero-desc">نهتم بتقديم تجربة واضحة وسهلة لمساعدتك في العثور على السيارة المناسبة.</p>
+                    <ul class="check-list">
+                        <li><span class="check-icon" aria-hidden="true">✓</span> معلومات السيارة الأساسية معروضة بوضوح.</li>
+                        <li><span class="check-icon" aria-hidden="true">✓</span> خيارات متنوعة من الماركات وأنواع الوقود.</li>
+                        <li><span class="check-icon" aria-hidden="true">✓</span> إمكانية البحث حسب الماركة والسنة والوقود.</li>
+                    </ul>
+                </div>
+                <div class="testimonial-box">
+                    <div class="quote-icon" aria-hidden="true">“</div>
+                    <p class="testimonial-text">هدفنا أن تجد المعلومات التي تحتاجها بسهولة، وأن تختار سيارتك وأنت على دراية بمواصفاتها.</p>
+                    <div class="user-info">
+                        <div class="user-details">
+                            <h5>معرض الشرقاوي</h5>
+                            <p>ثقتكم تهمنا</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox-modal is-hidden" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="صورة السيارة المكبرة">
+        <button class="lightbox-close-btn" type="button" aria-label="إغلاق الصورة">&times;</button>
+        <img id="lightbox-img" src="" alt="صورة سيارة مكبرة">
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <p>© <span>2026</span> معرض الشرقاوي للسيارات. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+</body>
+</html>
