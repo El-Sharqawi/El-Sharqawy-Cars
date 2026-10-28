@@ -1,168 +1,162 @@
-/* ==========================================
-   1. المتغيرات والتنسيقات الأساسية
-   ========================================== */
 :root {
     --bg-dark: #090d14;
     --bg-card: #111823;
     --accent-cyan: #00f2fe;
     --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --shadow-glow: 0 10px 30px -10px rgba(0, 242, 254, 0.2);
+    --text-muted: #aab2c0;
+    --border-color: rgba(255, 255, 255, 0.09);
     --radius-lg: 20px;
     --radius-md: 12px;
+    --container-width: 1060px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Tajawal', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    line-height: 1.6;
     overflow-x: hidden;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: "Tajawal", sans-serif;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 24px;
+    width: min(calc(100% - 36px), var(--container-width));
+    margin-inline: auto;
 }
 
-/* ==========================================
-   2. الهيدر واللوجو وقائمة التنقل
-   ========================================== */
-header {
-    padding: 16px 0;
+.site-header {
     position: sticky;
     top: 0;
-    background-color: rgba(9, 13, 20, 0.95);
-    backdrop-filter: blur(12px);
-    z-index: 1000;
+    z-index: 100;
+    padding: 14px 0;
     border-bottom: 1px solid var(--border-color);
+    background: rgba(9, 13, 20, 0.96);
+    backdrop-filter: blur(14px);
 }
 
 .navbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    position: relative;
-    gap: 20px;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    gap: 24px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
     white-space: nowrap;
 }
 
-.logo-text {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-}
-
 .brand-ar {
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 800;
-    color: var(--text-main);
 }
 
 .brand-en {
-    font-size: 15px;
-    font-weight: 700;
     color: var(--accent-cyan);
-    font-family: system-ui, -apple-system, sans-serif;
-}
-
-.menu-checkbox {
-    display: none;
-}
-
-.hamburger-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.hamburger-btn span {
-    display: block;
-    height: 2.5px;
-    width: 100%;
-    background-color: var(--text-main);
-    border-radius: 3px;
-    transition: all 0.3s ease;
+    font: 700 13px/1.4 system-ui, sans-serif;
 }
 
 .nav-links {
     display: flex;
-    gap: 24px;
-    list-style: none;
     align-items: center;
+    gap: 22px;
+    list-style: none;
 }
 
 .nav-links a {
-    font-size: 15px;
-    font-weight: 500;
     color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent-cyan);
 }
 
-.mobile-actions {
-    display: none;
-}
-
-.nav-actions {
+.header-actions {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.btn {
-    padding: 10px 22px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
+.menu-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
     white-space: nowrap;
 }
 
-.btn-full {
+.hamburger-btn {
+    display: none;
+    width: 27px;
+    height: 21px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger-btn span {
     width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--text-main);
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 9px 19px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    color: #061015;
+    background: linear-gradient(135deg, #00f2fe, #0099ff);
+    box-shadow: 0 8px 25px rgba(0, 190, 255, 0.13);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 190, 255, 0.23);
 }
 
 .btn-outline {
-    background: transparent;
+    border-color: var(--border-color);
     color: var(--text-main);
-    border: 1px solid var(--border-color);
+    background: transparent;
 }
 
 .btn-outline:hover {
@@ -170,691 +164,529 @@ header {
     color: var(--accent-cyan);
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, #00f2fe 0%, #0099ff 100%);
-    color: #000;
-    box-shadow: var(--shadow-glow);
-}
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px -5px rgba(0, 242, 254, 0.4);
-}
-
-.btn-danger {
-    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-    color: #fff;
-}
-
-/* ==========================================
-   3. قسم الهيرو والبحث
-   ========================================== */
 .hero {
     position: relative;
-    padding: 50px 0 80px;
-    min-height: 75vh;
     display: flex;
     align-items: center;
+    min-height: 420px;
+    padding: 70px 0;
+    isolation: isolate;
 }
 
 .hero-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, var(--bg-dark) 40%, rgba(9, 13, 20, 0.4) 100%), 
-                url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    inset: 0;
     z-index: -1;
-    border-radius: 0 0 40px 40px;
-    opacity: 0.85;
+    border-radius: 0 0 30px 30px;
+    background:
+        linear-gradient(90deg, rgba(9, 13, 20, 0.98), rgba(9, 13, 20, 0.68)),
+        url("https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
 }
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
-    align-items: center;
+.hero-content {
+    text-align: center;
 }
 
-.hero-title {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-title span {
+.eyebrow {
+    margin-bottom: 8px;
     color: var(--accent-cyan);
-    display: block;
+    font-size: 13px;
+    font-weight: 800;
 }
 
-.hero-desc {
+.hero h1 {
+    margin-bottom: 15px;
+    font-size: clamp(34px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.hero h1 span {
+    color: var(--accent-cyan);
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto 24px;
+    color: var(--text-muted);
     font-size: 16px;
-    color: var(--text-muted);
-    margin-bottom: 30px;
-    max-width: 500px;
 }
 
-.search-card {
-    background: rgba(17, 24, 35, 0.9);
-    backdrop-filter: blur(16px);
-    border: 1px solid var(--border-color);
-    padding: 24px;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-.search-card h3 {
-    font-size: 18px;
-    margin-bottom: 16px;
-    font-weight: 700;
-}
-
-.search-form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.form-group label {
-    font-size: 12px;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-.form-control {
-    background: #090d14;
-    border: 1px solid var(--border-color);
-    padding: 12px 14px;
-    border-radius: var(--radius-md);
-    color: var(--text-main);
-    font-size: 14px;
-    outline: none;
-    width: 100%;
-}
-
-.form-control:focus {
-    border-color: var(--accent-cyan);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.search-submit-btn {
-    width: 100%;
-    margin-top: 8px;
-    padding: 13px;
-}
-
-/* ==========================================
-   4. مميزات الموقع
-   ========================================== */
 .features {
-    margin-top: -30px;
     position: relative;
-    z-index: 10;
+    z-index: 2;
+    margin-top: -25px;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
 }
 
 .feature-card {
-    background: var(--bg-card);
+    padding: 18px;
     border: 1px solid var(--border-color);
-    padding: 22px;
-    border-radius: var(--radius-lg);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: transform 0.3s ease;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     border-color: rgba(0, 242, 254, 0.3);
 }
 
 .feature-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: rgba(0, 242, 254, 0.1);
-    color: var(--accent-cyan);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 35px;
+    height: 35px;
+    margin-bottom: 8px;
+    border-radius: 9px;
+    color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    font-size: 14px;
+    font-weight: 800;
 }
 
-.feature-icon svg {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
-}
-
-.feature-card h4 {
+.feature-card h2 {
+    margin-bottom: 4px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .feature-card p {
-    font-size: 13px;
     color: var(--text-muted);
+    font-size: 12px;
 }
 
-/* ==========================================
-   5. شبكة كروت السيارات
-   ========================================== */
+
 .cars-section {
-    padding: 70px 0;
+    padding: 68px 0 80px;
+}
+
+.section-heading {
+    margin-bottom: 26px;
+    text-align: right;
+}
+
+.section-heading h2 {
+    margin-bottom: 3px;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    font-size: 14px;
 }
 
 .cars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    align-items: stretch;
 }
 
 .car-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
+    min-width: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background: var(--bg-card);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .car-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(0, 242, 254, 0.4);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.28);
+    box-shadow: 0 13px 28px rgba(0, 0, 0, 0.22);
 }
 
-.car-img-box {
+.car-image {
     position: relative;
-    width: 100%;
-    height: 180px;
+    height: 155px;
     overflow: hidden;
-    background-color: #05080d;
+    background: #080c12;
 }
 
-.car-img-box img {
+.car-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.35s ease;
 }
 
-.car-card:hover .car-img-box img {
-    transform: scale(1.08);
+.car-card:hover .car-image img {
+    transform: scale(1.035);
 }
 
-.car-badge {
+.fuel-badge {
     position: absolute;
-    bottom: 12px;
-    left: 12px;
-    background: rgba(9, 13, 20, 0.8);
-    backdrop-filter: blur(4px);
-    padding: 4px 10px;
-    border-radius: 50px;
-    font-size: 11px;
+    bottom: 10px;
+    right: 10px;
+    padding: 3px 10px;
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    border-radius: 30px;
     color: var(--accent-cyan);
-    border: 1px solid rgba(0, 242, 254, 0.3);
+    background: rgba(5, 12, 18, 0.9);
+    font-size: 11px;
+    font-weight: 800;
 }
 
-.car-content {
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+.car-info {
+    padding: 13px 14px 15px;
 }
+
+/* .car-brand {
+    margin-bottom: 2px;
+    color: var(--accent-cyan);
+    font-size: 10px;
+    font-weight: 700;
+} */
 
 .car-name {
-    font-size: 17px;
-    font-weight: 700;
+    min-height: 28px;
     margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.6;
 }
 
 .car-specs {
     display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px 8px;
+    min-height: 34px;
+    padding: 8px 0;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-    padding: 10px 0;
+    list-style: none;
 }
 
-.spec-item {
-    font-size: 11px;
-    color: var(--text-muted);
-}
-
-.car-footer {
-    display: flex;
-    justify-content: space-between;
+.car-specs li {
+    display: inline-flex;
     align-items: center;
-    margin-top: auto;
-}
-
-.price-num {
-    font-size: 19px;
-    font-weight: 800;
-    color: var(--accent-cyan);
-    display: block;
-    line-height: 1;
-}
-
-.price-label {
-    font-size: 11px;
+    gap: 4px;
     color: var(--text-muted);
+    font-size: 10px;
+    white-space: nowrap;
 }
 
-.buy-btn {
-    padding: 8px 16px;
-    font-size: 13px;
+.car-specs li span {
+    color: #d5dbe4;
+    font-size: 10px;
 }
 
-/* ==========================================
-   6. لماذا تختارنا + رأي العميل
-   ========================================== */
+.car-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-top: 10px;
+}
+
+.car-price strong {
+    color: var(--accent-cyan);
+    font-size: 16px;
+    font-weight: 800;
+    direction: ltr;
+    line-height: 1.5;
+}
+
+.car-price > span {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
 .why-us {
-    padding: 40px 0 80px;
+    padding: 15px 0 75px;
 }
 
 .why-us-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 0.85fr;
     align-items: center;
+    gap: 45px;
+}
+
+.why-us h2 {
+    margin-bottom: 10px;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+.section-description {
+    color: var(--text-muted);
+    font-size: 15px;
 }
 
 .check-list {
-    list-style: none;
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 13px;
+    margin-top: 20px;
+    list-style: none;
 }
 
 .check-list li {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 9px;
     font-size: 14px;
 }
 
 .check-icon {
+    display: inline-flex;
+    flex: 0 0 22px;
+    align-items: center;
+    justify-content: center;
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: rgba(0, 242, 254, 0.1);
     color: var(--accent-cyan);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 11px;
-    flex-shrink: 0;
+    background: rgba(0, 242, 254, 0.1);
+    font-size: 12px;
+    font-weight: 800;
 }
 
 .testimonial-box {
-    background: linear-gradient(145deg, rgba(17, 24, 35, 0.9), rgba(9, 13, 20, 0.9));
+    padding: 27px;
     border: 1px solid var(--border-color);
-    padding: 28px;
     border-radius: var(--radius-lg);
+    background: var(--bg-card);
 }
 
 .quote-icon {
-    font-size: 50px;
     color: var(--accent-cyan);
-    opacity: 0.3;
+    font-size: 48px;
     line-height: 1;
 }
 
 .testimonial-text {
-    font-size: 15px;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.user-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.user-details h5 {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.user-details p {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
-/* ==========================================
-   7. تنسيقات صفحة الداشبورد وإدارة السيارات
-   ========================================== */
-.dashboard-container {
-    padding: 50px 24px;
-}
-
-.dashboard-card {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.dashboard-title {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: var(--accent-cyan);
-}
-
-.dashboard-subtitle {
+    margin-bottom: 17px;
     font-size: 16px;
-    margin-bottom: 12px;
-    color: var(--text-main);
 }
 
-.dashboard-divider {
-    border: 0;
-    border-top: 1px solid var(--border-color);
-    margin: 30px 0 20px 0;
-}
-
-.radio-source-group {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 8px;
-}
-
-.radio-label {
-    cursor: pointer;
-    font-size: 13px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.form-actions-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.btn-submit-dashboard {
-    flex: 1;
-    padding: 14px;
-}
-
-.mt-8 {
-    margin-top: 8px;
-}
-
-.is-hidden {
-    display: none !important;
-}
-
-/* نتائج البحث في الداشبورد */
-.search-results-list {
-    margin-top: 12px;
-    max-height: 220px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.search-result-item {
-    background: #090d14;
-    border: 1px solid var(--border-color);
-    padding: 10px 14px;
-    border-radius: var(--radius-md);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.search-result-item:hover {
-    border-color: var(--accent-cyan);
-    background: rgba(0, 242, 254, 0.05);
-}
-
-.search-result-info span {
-    display: block;
-}
-
-.search-result-name {
-    font-weight: 700;
+.testimonial-box h3 {
     font-size: 14px;
 }
 
-.search-result-meta {
+.muted-text {
+    color: var(--text-muted);
     font-size: 12px;
-    color: var(--text-muted);
 }
 
-/* النافذة المنبثقة (Modal) للإدارة والتعديل والحذف */
-.car-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-}
-
-.car-modal-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 24px;
-    border-radius: var(--radius-lg);
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
-
-.car-modal-content h4 {
-    margin-bottom: 12px;
-    color: var(--accent-cyan);
-}
-
-.modal-info-text {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-}
-
-.modal-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-/* التنبيه العائم الشيك (Toast Notification) */
-.toast-notification {
-    position: fixed;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100px);
-    background: linear-gradient(135deg, #00f2fe 0%, #0099ff 100%);
-    color: #000;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 14px;
-    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0;
-    z-index: 3000;
-}
-
-.toast-notification.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-}
-
-/* ==========================================
-   8. الفوتر والتجاوب
-   ========================================== */
-footer {
-    padding: 24px 0;
+.site-footer {
+    padding: 30px 0 18px;
     border-top: 1px solid var(--border-color);
-    text-align: center;
+    background: #070a10;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 15px 25px;
+}
+
+.footer-content h2 {
+    margin-bottom: 4px;
+    font-size: 17px;
+}
+
+.footer-content p {
     color: var(--text-muted);
     font-size: 13px;
 }
 
-@media (max-width: 992px) {
+.copyright {
+    grid-column: 1 / -1;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 11px !important;
+}
+
+
+@media (max-width: 1000px) {
+    :root {
+        --container-width: 800px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .header-actions .btn {
+        display: none;
+    }
+
+    .cars-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .car-image {
+        height: 165px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .container {
+        width: min(calc(100% - 28px), var(--container-width));
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .brand-ar {
+        font-size: 21px;
+    }
+
+    .brand-en {
+        font-size: 12px;
+    }
+
     .hamburger-btn {
         display: flex;
     }
 
-    .nav-actions {
+    .main-nav {
         display: none;
+        order: 3;
+        width: 100%;
     }
 
     .nav-links {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        background-color: rgba(9, 13, 20, 0.98);
-        backdrop-filter: blur(16px);
+        align-items: stretch;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 24px;
-        gap: 16px;
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
-
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.35s ease-in-out;
+        gap: 0;
+        padding-top: 8px;
     }
 
-    .menu-checkbox:checked ~ nav .nav-links {
-        max-height: 450px;
-        opacity: 1;
-        visibility: visible;
+    .nav-links a {
+        display: block;
+        padding: 9px 0;
     }
 
-    .menu-checkbox:checked ~ .header-right .hamburger-btn span:nth-child(1) {
-        transform: translateY(7.5px) rotate(45deg);
-    }
-    .menu-checkbox:checked ~ .header-right .hamburger-btn span:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-checkbox:checked ~ .header-right .hamburger-btn span:nth-child(3) {
-        transform: translateY(-7.5px) rotate(-45deg);
+    .menu-checkbox:checked ~ .main-nav {
+        display: block;
     }
 
-    .mobile-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        margin-top: 6px;
-        padding-top: 16px;
-        border-top: 1px solid var(--border-color);
+    .hero {
+        min-height: auto;
+        padding: 65px 0 75px;
     }
 
-    .hero-grid, .why-us-grid {
-        grid-template-columns: 1fr;
+    .hero h1 {
+        font-size: clamp(33px, 9vw, 44px);
+    }
+
+    .hero-description {
+        font-size: 14px;
     }
 
     .features-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .feature-card {
+        padding: 14px;
+    }
+
+    .cars-section {
+        padding: 55px 0 65px;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .cars-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .car-image {
+        height: 125px;
+    }
+
+    .car-info {
+        padding: 11px;
+    }
+
+    .car-name {
+        font-size: 12px;
+    }
+
+    .car-specs {
+        gap: 5px;
+    }
+
+    .car-specs li {
+        font-size: 9px;
+    }
+
+    .car-price strong {
+        font-size: 14px;
+    }
+
+    .why-us-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .why-us h2 {
+        font-size: 25px;
+    }
+
+    .testimonial-box {
+        padding: 22px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-content .btn {
+        justify-self: center;
+    }
+
+    .copyright {
+        grid-column: auto;
     }
 }
 
-@media (max-width: 576px) {
-    .container {
-        padding: 0 16px;
-    }
-
-    .form-row {
+@media (max-width: 380px) {
+    .cars-grid {
         grid-template-columns: 1fr;
     }
 
-    .features-grid, .cars-grid {
-        grid-template-columns: 1fr;
+    .car-image {
+        height: 190px;
+    }
+
+    .car-name {
+        font-size: 14px;
     }
 }
 
-.lightbox-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
-.lightbox-modal:not(.is-hidden) {
-    opacity: 1;
-    visibility: visible;
-}
-
-#lightbox-img {
-    max-width: 90%;
-    max-height: 85vh;
-    border-radius: var(--radius-md);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-    object-fit: contain;
-    border: 1px solid var(--border-color);
-}
-
-.lightbox-close-btn {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    color: #fff;
-    font-size: 45px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-    line-height: 1;
-}
-
-.lightbox-close-btn:hover {
-    color: var(--accent-cyan);
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
 }
