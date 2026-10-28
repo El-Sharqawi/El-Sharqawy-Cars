@@ -341,12 +341,12 @@ a {
     padding: 13px 14px 15px;
 }
 
-/* .car-brand {
+.car-brand {
     margin-bottom: 2px;
     color: var(--accent-cyan);
     font-size: 10px;
     font-weight: 700;
-} */
+}
 
 .car-name {
     min-height: 28px;

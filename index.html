@@ -14,506 +14,460 @@
 
 <body>
 
-    <header class="site-header">
-        <div class="container navbar">
-            <a class="logo" href="#home" aria-label="الشرقاوي - الصفحة الرئيسية">
-                <span class="brand-ar">الشرقاوي</span>
-                <span class="brand-en">El Sharqawy</span>
-            </a>
+<header class="site-header">
+    <div class="container navbar">
+        <a class="logo" href="#home" aria-label="الشرقاوي - الصفحة الرئيسية">
+            <span class="brand-ar">الشرقاوي</span>
+            <span class="brand-en">El Sharqawy</span>
+        </a>
+        <input class="menu-checkbox" type="checkbox" id="menu-toggle" aria-label="فتح قائمة التنقل">
+        <nav class="main-nav" aria-label="القائمة الرئيسية">
+            <ul class="nav-links">
+                <li><a class="active" href="#home">الرئيسية</a></li>
+                <li><a href="#cars">السيارات</a></li>
+                <li><a href="#why-us">من نحن</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a class="btn btn-outline" href="#contact">تواصل معنا</a>
+            <label class="hamburger-btn" for="menu-toggle" aria-label="فتح أو إغلاق القائمة">
+                <span></span><span></span><span></span>
+            </label>
+        </div>
+    </div>
+</header>
 
-            <input class="menu-checkbox" type="checkbox" id="menu-toggle" aria-label="فتح قائمة التنقل">
+<!-- Main -->
+<main id="home">
+    <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-content">
+            <p class="eyebrow">أهلاً بك في معرض الشرقاوي</p>
+            <h1>اختار عربيتك <span>مع الشرقاوي</span></h1>
+            <p class="hero-description">
+                اكتشف مجموعة من السيارات المميزة، وشوف المواصفات والأسعار واختار العربية المناسبة ليك.
+            </p>
+            <a class="btn btn-primary" href="#cars">تصفح السيارات</a>
+        </div>
+    </section>
 
-            <nav class="main-nav" aria-label="القائمة الرئيسية">
-                <ul class="nav-links">
-                    <li><a class="active" href="#home">الرئيسية</a></li>
-                    <li><a href="#cars">السيارات</a></li>
-                    <li><a href="#why-us">من نحن</a></li>
-                    <li><a href="#contact">تواصل معنا</a></li>
-                </ul>
-            </nav>
+    <section class="features" aria-label="مميزات معرض الشرقاوي">
+        <div class="container features-grid">
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">✓</span>
+                <h2>سيارات مختارة</h2>
+                <p>خيارات متنوعة تناسب احتياجاتك.</p>
+            </article>
 
-            <div class="header-actions">
-                <a class="btn btn-outline" href="#contact">تواصل معنا</a>
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">◇</span>
+                <h2>مواصفات واضحة</h2>
+                <p>تفاصيل كل Car في مكان واحد.</p>
+            </article>
 
-                <label class="hamburger-btn" for="menu-toggle" aria-label="فتح أو إغلاق القائمة">
-                    <span></span><span></span><span></span>
-                </label>
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">ج.م</span>
+                <h2>أسعار واضحة</h2>
+                <p>السعر ظاهر مع كل Car.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">☎</span>
+                <h2>تواصل بسهولة</h2>
+                <p>تواصل معنا للاستفسار عن Car.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="cars-section" id="cars">
+        <div class="container">
+            <div class="section-heading">
+                <h2>السيارات المتاحة</h2>
+                <p>تصفح أحدث السيارات المضافة إلى المعرض.</p>
+            </div>
+            <div class="cars-grid">
+
+                <!-- Car 1 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/1.png" alt="lambo" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">لامبورغيني هوراكان إيفو - 2022</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span> 2 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2022</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>21.000.000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 2 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/2.png" alt="Mercides c-class" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">مرسيدس 2026 C-Class</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span> 2 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>7.650.000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 3 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/3.png"
+                             alt="bmw" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">بي ام 440i x - 2022</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span> 4 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2022</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>6,100,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 4 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/10.png"
+                             alt="mercides benz" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">مرسيدس بنز E200 - 2027</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span> 5 مقعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2027</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>6,350,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 5 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/4.png"
+                             alt="nissan patrol" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">نيسان باترول - 2026</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span> 5 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>9,600,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Car 6 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/5.png"
+                             alt="land cruzer" loading="lazy">
+                        <span class="fuel-badge">كهربائية</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">تويوتا لاند كروزر GXR - 2026</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span> 5 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>9,850,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 7 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/6.png"
+                             alt="escalde" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">كاديلاك إسكاليد - 2026</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>5 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>11,200,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 8 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/12.png"
+                             alt="bmw" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name"> بي ام دبليو اكس 6 - 2027</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>5 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2027</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>13,000,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 9 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/14.png"
+                             alt="rang" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">رينج روفر سبورت  - 2026</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>5 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>8,050,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 10 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/13.png"
+                             alt="tesla" loading="lazy">
+                        <span class="fuel-badge">كهرباء</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name"> تسلا سيبرتراك -2025</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>4 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>16,100,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 11 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/15.png"
+                             alt="hamer" loading="lazy">
+                        <span class="fuel-badge">كهرباء</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name"> جي إم سي هامر - 2026</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>7 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2023</li>
+                        </ul>
+                        <div class="car-price">
+                            <strong>7,310,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 12 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="https://i.pinimg.com/736x/2c/05/36/2c053691008d78591e57b9a5afd58fdc.jpg"
+                             alt="g-class" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name"> مرسيدس جي كلاس - 2026</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>5 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <span class="spec-item"></span>
+                        <div class="car-price">
+                            <strong>12,150,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 13 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/7.png"
+                             alt="key sportag" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">كيا سبورتاج - 2025</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>5 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2025</li>
+                        </ul>
+                        <span class="spec-item"></span>
+                        <div class="car-price">
+                            <strong>2,575,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 14 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/11.png"
+                             alt="scoda" loading="lazy">
+                        <span class="fuel-badge">بنزين</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">سكودا كودياك - 2026</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>7 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <span class="spec-item"></span>
+                        <div class="car-price">
+                            <strong>2,800,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 15 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/8.png"
+                             alt="byd" loading="lazy">
+                        <span class="fuel-badge">كهرباء</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">بي واي دي شارك - 2026</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>4 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2026</li>
+                        </ul>
+                        <span class="spec-item"></span>
+                        <div class="car-price">
+                            <strong>3,175,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car 16 -->
+                <article class="car-card">
+                    <div class="car-image">
+                        <img src="cars/9.png"
+                             alt="avater" loading="lazy">
+                        <span class="fuel-badge">كهرباء</span>
+                    </div>
+                    <div class="car-info">
+                        <h3 class="car-name">أفاتار 12 - 2025</h3>
+                        <ul class="car-specs">
+                            <li><span aria-hidden="true">👤</span>5 مقاعد</li>
+                            <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
+                            <li><span aria-hidden="true">📅</span> موديل 2025</li>
+                        </ul>
+                        <span class="spec-item"></span>
+                        <div class="car-price">
+                            <strong>3,850,000</strong>
+                            <span>جنيه مصري</span>
+                        </div>
+                    </div>
+                </article>                   
+                
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Main -->
-    <main id="home">
-
-        <section class="hero">
-            <div class="hero-bg" aria-hidden="true"></div>
-
-            <div class="container hero-content">
-                <p class="eyebrow">أهلاً بك في معرض الشرقاوي</p>
-
-                <h1>اختار عربيتك <span>مع الشرقاوي</span></h1>
-
-                <p class="hero-description">
-                    اكتشف مجموعة من السيارات المميزة، وشوف المواصفات والأسعار واختار العربية المناسبة ليك.
-                </p>
-
-                <a class="btn btn-primary" href="#cars">تصفح السيارات</a>
-            </div>
-        </section>
-
-        <section class="features" aria-label="مميزات معرض الشرقاوي">
-            <div class="container features-grid">
-
-                <article class="feature-card">
-                    <span class="feature-icon" aria-hidden="true">✓</span>
-                    <h2>سيارات مختارة</h2>
-                    <p>خيارات متنوعة تناسب احتياجاتك.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon" aria-hidden="true">◇</span>
-                    <h2>مواصفات واضحة</h2>
-                    <p>تفاصيل كل Car في مكان واحد.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon" aria-hidden="true">ج.م</span>
-                    <h2>أسعار واضحة</h2>
-                    <p>السعر ظاهر مع كل Car.</p>
-                </article>
-
-                <article class="feature-card">
-                    <span class="feature-icon" aria-hidden="true">☎</span>
-                    <h2>تواصل بسهولة</h2>
-                    <p>تواصل معنا للاستفسار عن Car.</p>
-                </article>
-
-            </div>
-        </section>
-
-        <section class="cars-section" id="cars">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>السيارات المتاحة</h2>
-                    <p>تصفح أحدث السيارات المضافة إلى المعرض.</p>
-                </div>
-
-                <div class="cars-grid">
-
-                    <!-- Car 1 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/1.png" alt="lambo" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">لامبورغيني هوراكان إيفو - 2022</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span> 2 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2022</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>21.000.000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 2 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/2.png" alt="Mercides c-class" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">مرسيدس 2026 C-Class</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span> 2 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2026</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>7.650.000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 3 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/3.png"
-                                 alt="bmw" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">بي ام 440i x - 2022</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span> 4 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2022</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>6,100,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 4 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/10.png"
-                                 alt="mercides benz" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">مرسيدس بنز E200 - 2027</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span> 5 مقعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2027</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>6,350,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 5 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/4.png"
-                                 alt="nissan patrol" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">نيسان باترول - 2026</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span> 5 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2026</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>9,600,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 6 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/5.png"
-                                 alt="land cruzer" loading="lazy">
-                            <span class="fuel-badge">كهربائية</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">تويوتا لاند كروزر GXR - 2026</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span> 5 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2026</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>9,850,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 7 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/6.png"
-                                 alt="escalde" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">كاديلاك إسكاليد - 2026</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>5 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2026</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>11,200,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 8 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/12.png"
-                                 alt="bmw" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name"> بي ام دبليو اكس 6 - 2027</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>5 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2027</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>13,000,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 9 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/14.png"
-                                 alt="rang" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">رينج روفر سبورت  - 2026</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>5 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2026</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>8,050,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 10 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/13.png"
-                                 alt="tesla" loading="lazy">
-                            <span class="fuel-badge">كهرباء</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name"> تسلا سيبرتراك -2025</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>4 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2026</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>16,100,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 11 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/15.png"
-                                 alt="hamer" loading="lazy">
-                            <span class="fuel-badge">كهرباء</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name"> جي إم سي هامر - 2026</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>7 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2023</li>
-                            </ul>
-
-                            <div class="car-price">
-                                <strong>7,310,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 12 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/7.png"
-                                 alt="key sportag" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">كيا سبورتاج - 2025</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>5 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2025</li>
-                            </ul>
-
-                            <span class="spec-item"></span>
-
-                            <div class="car-price">
-                                <strong>2,575,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 13 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/11.png"
-                                 alt="scoda" loading="lazy">
-                            <span class="fuel-badge">بنزين</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">سكودا كودياك - 2026</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>7 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2026</li>
-                            </ul>
-
-                            <span class="spec-item"></span>
-
-                            <div class="car-price">
-                                <strong>2,800,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 14 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/8.png"
-                                 alt="byd" loading="lazy">
-                            <span class="fuel-badge">كهرباء</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">بي واي دي شارك - 2026</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>4 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2026</li>
-                            </ul>
-
-                            <span class="spec-item"></span>
-
-                            <div class="car-price">
-                                <strong>3,175,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Car 15 -->
-                    <article class="car-card">
-                        <div class="car-image">
-                            <img src="cars/9.png"
-                                 alt="avater" loading="lazy">
-                            <span class="fuel-badge">كهرباء</span>
-                        </div>
-
-                        <div class="car-info">
-                            <h3 class="car-name">أفاتار 12 - 2025</h3>
-
-                            <ul class="car-specs">
-                                <li><span aria-hidden="true">👤</span>5 مقاعد</li>
-                                <li><span aria-hidden="true">⚙️</span> أوتوماتيك</li>
-                                <li><span aria-hidden="true">📅</span> موديل 2025</li>
-                            </ul>
-
-                            <span class="spec-item"></span>
-
-                            <div class="car-price">
-                                <strong>3,850,000</strong>
-                                <span>جنيه مصري</span>
-                            </div>
-                        </div>
-                    </article>            
-
-                </div>
-            </div>
-        </section>
-
-        <section class="why-us" id="why-us">
-            <div class="container why-us-grid">
-                <div>
-                    <p class="eyebrow">اختيارك بثقة</p>
-                    <h2>لماذا تختار معرض الشرقاوي؟</h2>
-
-                    <p class="section-description">
-                        نهتم بتقديم تجربة واضحة وسهلة لمساعدتك في العثور على Car المناسبة.
-                    </p>
-
-                    <ul class="check-list">
-                        <li><span class="check-icon" aria-hidden="true">✓</span> معلومات Car الأساسية معروضة بوضوح.</li>
-                        <li><span class="check-icon" aria-hidden="true">✓</span> خيارات متنوعة من الماركات وأنواع الوقود.</li>
-                        <li><span class="check-icon" aria-hidden="true">✓</span> تواصل معنا للاستفسار عن السيارات والأسعار.</li>
-                    </ul>
-                </div>
-
-                <aside class="testimonial-box">
-                    <div class="quote-icon" aria-hidden="true">“</div>
-
-                    <p class="testimonial-text">
-                        هدفنا أن تجد المعلومات التي تحتاجها بسهولة، وأن تختار سيارتك وأنت على دراية بمواصفاتها.
-                    </p>
-
-                    <h3>معرض الشرقاوي</h3>
-                    <p class="muted-text">ثقتكم تهمنا</p>
-                </aside>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer" id="contact">
-        <div class="container footer-content">
+    <section class="why-us" id="why-us">
+        <div class="container why-us-grid">
             <div>
-                <h2>معرض الشرقاوي للسيارات</h2>
-                <p>للاستفسار عن السيارات والأسعار، تواصل معنا.</p>
+                <p class="eyebrow">اختيارك بثقة</p>
+                <h2>لماذا تختار معرض الشرقاوي؟</h2>
+                <p class="section-description">
+                    نهتم بتقديم تجربة واضحة وسهلة لمساعدتك في العثور على Car المناسبة.
+                </p>
+                <ul class="check-list">
+                    <li><span class="check-icon" aria-hidden="true">✓</span> معلومات Car الأساسية معروضة بوضوح.</li>
+                    <li><span class="check-icon" aria-hidden="true">✓</span> خيارات متنوعة من الماركات وأنواع الوقود.</li>
+                    <li><span class="check-icon" aria-hidden="true">✓</span> تواصل معنا للاستفسار عن السيارات والأسعار.</li>
+                </ul>
             </div>
 
-            <a class="btn btn-primary" href="https://wa.me/201127942103" target="_blank" rel="noopener noreferrer">تواصل معنا عبر واتساب</a>
-
-            <p class="copyright">© 2026 معرض الشرقاوي للسيارات. جميع الحقوق محفوظة.</p>
+            <aside class="testimonial-box">
+                <div class="quote-icon" aria-hidden="true">“</div>
+                <p class="testimonial-text">
+                    هدفنا أن تجد المعلومات التي تحتاجها بسهولة، وأن تختار سيارتك وأنت على دراية بمواصفاتها.
+                </p>
+                <h3>معرض الشرقاوي</h3>
+                <p class="muted-text">ثقتكم تهمنا</p>
+            </aside>
         </div>
-    </footer>
+    </section>
+</main>
+
+<footer class="site-footer" id="contact">
+    <div class="container footer-content">
+        <div>
+            <h2>معرض الشرقاوي للسيارات</h2>
+            <p>للاستفسار عن السيارات والأسعار، تواصل معنا.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/201127942103" target="_blank" rel="noopener noreferrer">تواصل معنا عبر واتساب</a>
+        <p class="copyright">© 2026 معرض الشرقاوي للسيارات. جميع الحقوق محفوظة.</p>
+    </div>
+</footer>
 
 </body>
 </html>
